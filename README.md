@@ -11,5 +11,6 @@ It works by changing the fov value in memory using memoryjs. It is a hack and mi
 # How to update manually
 The config file for the offsets is stored in `AppData\Roaming\wowclassicfovchanger\storage\config.json`. You can get offsets for your WoW build [here](https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-bots-programs/wow-memory-editing) or using this [dumper](https://github.com/Razzue/Wow-Dumper).
 # How to build
-1. Build memoryjs with `nw-gyp clean configure build --arch=x64 --target=0.15.4`
-2. Build the electron app with `yarn build`
+1. run `yarn`
+2. Build memoryjs with `nw-gyp clean configure build --arch=x64 --target=0.15.4`
+3. Build the electron app with `yarn build`
