@@ -1,6 +1,8 @@
 ### ✅ Works as of 2/5/2022 version 2.5.3.42083
 
 # WoW-Classic-FoV-Changer
+[<img src="https://github.com//Ulibach/WoW-Classic-FoV-Changer/blob/main/example.gif?raw=true">]
+
 This is a TBC Classic WoW field of view changer. 
 It works by changing the fov value in memory using memoryjs. It is a hack and might get you banned 💀 (but probably not).
 
