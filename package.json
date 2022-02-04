@@ -1,0 +1,41 @@
+{
+  "name": "wowclassicfovchanger",
+  "version": "1.0.0",
+  "main": "main.js",
+  "build": {
+    "appId": "electron-react-boilerplate-minimal",
+    "mac": {
+      "category": "demo.app"
+    }
+  },
+  "scripts": {
+    "dev": "webpack --watch",
+    "start": "electron .",
+    "build": "webpack && electron-packager . WoWClassicFovChanger --platform=win32 --arch=x64"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.2.3",
+    "electron": "^17.0.0",
+    "electron-builder": "^22.14.5",
+    "electron-packager": "^15.4.0",
+    "node-addon-api": "^4.3.0",
+    "nw-gyp": "^3.6.5",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "@react-hook/debounce": "^4.0.0",
+    "electron-json-storage": "^4.5.0",
+    "electron-store": "^8.0.1",
+    "memoryjs": "^3.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
