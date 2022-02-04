@@ -36,15 +36,11 @@ function App () {
 
 
   useEffect(() => {
-    if (config) {
-    console.log("config", config)
-    }
   }, [config])
   useEffect(() => {
     if (window.api) {
       window.api.receive("handle", (data) => {
         setConfig(data.message != 'error' ? data.message : null)
-        console.log(data)
       })    
 
       window.api.receive("search", data => setPrc(data))
@@ -83,10 +79,12 @@ function App () {
       <br/>
 
       <div>
-
+        <br/>
+        Note: This tool is made for TBC Classic Build 42083.
+        To manually update the tool get your version's offset dump from <a target="_blank" href="https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-bots-programs/wow-memory-editing/">here</a> and update the values below.
       </div>
-
-        {settings ?
+<br/>
+      {settings ?
         <a href="" onClick={e => {
           e.preventDefault()
           toggleSettings(!settings)
@@ -130,12 +128,6 @@ function App () {
 
         }
 
-
-      <div>
-        <br/>
-        Note: This tool is made for TBC Classic Build 42083.
-        To manually update the tool get your version's offset dump from <a target="_blank" href="https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-bots-programs/wow-memory-editing/">here</a> and update the values above.
-      </div>
     </div>
   )
 }

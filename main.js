@@ -85,6 +85,13 @@ ipcMain.on("write", (_, message) => {
   })
 })
 
+
+const checkForWoW = () => {
+  const prcs = memoryjs.getProcesses()
+  if (prcs.filter(e => e.szExeFile === 'WowClassic.exe').length > 0) return true;
+  else false;
+}
+
 let int;
 let prc;
 setTimeout(() => {
@@ -92,20 +99,19 @@ setTimeout(() => {
   int = setInterval(() => {
 
     if (prc) {
-      let t = memoryjs.openProcess("WowClassic.exe")
+      let t = checkForWoW()
       if (t) {
         mainWindow.send("search", true)
-        memoryjs.closeProcess(t.handle)
         return;
       }
       else {
         mainWindow.send("search", false)
-        t = null;
+        prc = null;
         return;
       }
     }
     if (!prc) {
-      prc = memoryjs.openProcess("WowClassic.exe")
+    prc = checkForWoW() ? memoryjs.openProcess("WowClassic.exe") : null
     mainWindow.send("search", prc ? true : false)
     }
   }, 2000)
@@ -116,14 +122,12 @@ setTimeout(() => {
 ipcMain.on("change_fov", (_, fov) => {
   let {CameraBase, CameraOffset, FOVOffset} = storage.getSync('config')
 
-  console.log(CameraBase, CameraOffset, FOVOffset, storage.getSync('config'))
 
   if (prc && CameraBase && CameraOffset && FOVOffset) {
 
     const p1 = memoryjs.readMemory(prc.handle,prc.modBaseAddr + +CameraBase, memoryjs.PTR);
   const p2 = memoryjs.readMemory(prc.handle, p1 + +CameraOffset, memoryjs.PTR)
   memoryjs.writeMemory(prc.handle, p2 + +FOVOffset, +fov, "float")
-  console.log(fov)
   }
 
 })
