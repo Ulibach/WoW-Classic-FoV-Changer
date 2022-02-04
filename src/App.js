@@ -63,7 +63,7 @@ function App () {
     <b style={{
       color: 'green',
       fontStyle: 'Roboto'
-    }} color="green">✅ WoW Proccess Found ✅</b>
+    }} color="green">✅ WoW Process Found ✅</b>
   </div>
   :
   <div>
@@ -72,7 +72,7 @@ function App () {
     color: 'grey',
     fontStyle: 'Roboto'
   }}
-  >💀 WoW proccess not found 💀</b>
+  >💀 WoW process not found 💀</b>
   </div>
   }
 
